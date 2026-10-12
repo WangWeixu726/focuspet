@@ -11,4 +11,3 @@ dist/
 
 # Local player data should not be committed.
 data/save.json
-
