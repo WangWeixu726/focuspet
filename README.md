@@ -2,7 +2,7 @@
 
 A playful desktop companion that turns focused study sessions into rewards, growth, and interaction.
 
-> Current status: a placeholder pet is running in a transparent, frameless, always-on-top window. The goal is to release `v1.0` by October 31, 2026, and demonstrate the ability to build, explain, debug, and extend the project independently.
+> Current status: a draggable placeholder pet is running in a transparent, frameless, always-on-top window. The goal is to release `v1.0` by October 31, 2026, and demonstrate the ability to build, explain, debug, and extend the project independently.
 
 ## Core Experience
 
@@ -57,4 +57,4 @@ This repository records both the product and the learning process. Each feature 
 
 ## Current Next Step
 
-Handle mouse press, move, and release events so the pet can be dragged around the desktop.
+Add a picked-up state with visible feedback while the pet is being held.

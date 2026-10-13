@@ -17,7 +17,7 @@ Learning focus: the terminal, Python interpreters, virtual environments, package
 
 - [x] Create a transparent, frameless, always-on-top window
 - [x] Display the first placeholder pet image
-- [ ] Handle mouse press, move, and release events
+- [x] Handle mouse press, move, and release events
 - [ ] Add the picked-up state
 - [ ] Swing according to dragging direction
 - [ ] Add a basic idle animation
