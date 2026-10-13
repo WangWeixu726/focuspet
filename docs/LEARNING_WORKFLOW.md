@@ -1,60 +1,60 @@
-# 结对学习与 GitHub 记录规则
+# Pair-Learning and GitHub Workflow
 
-## 我们怎样完成每次学习
+## How Each Session Works
 
-每次只推进一个可验证的小目标：
+Each session advances one small, verifiable goal:
 
-1. 我先说明这一小步完成后能看到什么。
-2. 只讲马上要用到的概念和少量示例。
-3. 你亲手写核心代码并运行。
-4. 你把结果或报错告诉我，我们一起定位。
-5. 功能通过后整理代码、提交 Git，并写三行复盘。
+1. The mentor explains what should be visible when the step is complete.
+2. Only the concepts and examples needed for that step are introduced.
+3. The learner writes and runs the core code.
+4. The learner shares the result or error, and both sides investigate it together.
+5. After the feature works, the code is cleaned up, committed, and followed by a short reflection.
 
-默认不会一开始就给出完整答案。遇到困难时按三个提示等级推进：
+Complete solutions are not provided at the beginning by default. When help is needed, hints progress through three levels:
 
-- 一级：指出问题所在和检查方向。
-- 二级：给出伪代码或关键 API。
-- 三级：给出最小可运行修复，并逐行解释。
+- Level 1: identify the problem area and suggest what to inspect.
+- Level 2: provide pseudocode or the key API.
+- Level 3: provide the smallest working correction and explain it line by line.
 
-## 每次提交的标准
+## Commit Standards
 
-- 一次提交只完成一件能说清楚的事。
-- 提交前至少亲自运行一次。
-- 提交说明使用简短中文，例如：`feat: 支持拖动宠物`。
-- 不提交虚拟环境、缓存、系统文件和个人存档。
-- 每完成一个阶段创建一个版本标签。
+- Each commit should complete one clearly describable change.
+- Run the relevant code at least once before committing.
+- Use a short English commit message, such as `feat: support dragging the pet`.
+- Do not commit virtual environments, caches, operating-system files, or personal save data.
+- Create a version tag after completing each major stage.
 
-建议的提交类型：
+Suggested commit types:
 
-- `feat`：新功能
-- `fix`：修复错误
-- `refactor`：功能不变的代码整理
-- `test`：测试
-- `docs`：文档或学习日志
-- `chore`：环境和工具调整
+- `feat`: a new feature
+- `fix`: a bug fix
+- `refactor`: a code improvement that does not change behavior
+- `test`: automated tests
+- `docs`: documentation or learning-log changes
+- `chore`: environment or tooling maintenance
 
-## 开发日志模板
+## Development Log Template
 
-每次结束前在 `devlog/` 中记录：
+At the end of a session, add a short entry under `devlog/`:
 
 ```markdown
-## 今天完成
+## What I Completed
 
-- （填写）
+- (Fill this in.)
 
-## 遇到的问题与解决方法
+## Problems and Solutions
 
-- （填写）
+- (Fill this in.)
 
-## 我现在能解释的概念
+## Concepts I Can Explain Now
 
-- （填写）
+- (Fill this in.)
 
-## 下一步
+## Next Step
 
-- （填写）
+- (Fill this in.)
 ```
 
-## GitHub 展示目标
+## GitHub Presentation Goal
 
-仓库最终应让陌生人快速看懂：项目解决什么问题、如何运行、关键功能如何演进、你遇到过哪些问题，以及你真正掌握了什么。学习日志追求真实和简洁，不写成每日作文。
+A visitor should be able to understand what the project does, how to run it, how its key features evolved, what problems appeared during development, and what the learner genuinely mastered. The log should be honest and concise rather than a daily essay.

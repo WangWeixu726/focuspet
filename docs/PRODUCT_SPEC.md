@@ -1,112 +1,112 @@
-# FocusPet 产品与验收说明
+# FocusPet Product Specification and Acceptance Criteria
 
-## 1. 项目目标
+## 1. Project Goal
 
-在 2026 年 10 月 31 日前完成一款能实际运行的 macOS 桌宠，并借开发过程掌握 Python 的核心使用方法。验收重点不是背诵概念，而是能独立理解需求、编写代码、定位问题和增加功能。
+Build a working macOS desktop pet by October 31, 2026, and use the development process to gain practical Python skills. Success is measured by the ability to understand requirements, write code, diagnose problems, and add features independently—not by memorizing definitions.
 
-## 2. 核心循环
+## 2. Core Loop
 
 ```text
-开始专注 → 宠物陪伴 → 完成番茄钟 → 获得金币/经验
-    ↑                                      ↓
-    └──────── 装扮、喂食、互动与成长 ────────┘
+Start focusing → Pet keeps you company → Complete Pomodoro → Earn coins/XP
+       ↑                                                       ↓
+       └──────────── Dress up, feed, interact, and grow ────────┘
 ```
 
-## 3. 宠物行为
+## 3. Pet Behavior
 
-### 3.1 基础状态
+### 3.1 Core States
 
-- `idle`：待机、呼吸、眨眼或随机小动作。
-- `focus`：番茄钟运行时安静陪伴。
-- `picked_up`：被鼠标拎起，显示悬空动作。
-- `swinging`：跟随拖动速度和方向产生左右摆动。
-- `falling`：松手后向下落。
-- `landing`：接触平台后短暂落地动作。
-- `walking`：朝指定目标移动。
-- `celebrating`：成功完成番茄钟后庆祝。
-- `sleeping`：长时间无操作时可能睡觉。
+- `idle`: breathe, blink, or perform a random small action.
+- `focus`: stay calm while a Pomodoro session is running.
+- `picked_up`: display a suspended pose while held by the mouse.
+- `swinging`: swing according to the speed and direction of dragging.
+- `falling`: move downward after being released.
+- `landing`: play a short landing response after touching a platform.
+- `walking`: move toward a selected destination.
+- `celebrating`: celebrate after a Pomodoro session is completed.
+- `sleeping`: possibly fall asleep after a long period without interaction.
 
-同一时刻只保留一个主要状态，避免多个动作互相打架。这会在项目中逐步演化为“状态机”。
+Only one primary state should be active at a time so that animations do not conflict. This behavior will gradually evolve into a state machine.
 
-### 3.2 拖动与落脚
+### 3.2 Dragging and Landing
 
-1. 按住宠物后进入 `picked_up`。
-2. 宠物跟随鼠标移动，并根据横向速度产生摆动。
-3. 松开鼠标后：
-   - 自由模式：停在松开位置。
-   - 平台模式：进入 `falling`，落到下方最近的有效平台。
+1. Holding the pet changes its state to `picked_up`.
+2. The pet follows the pointer and swings according to horizontal movement speed.
+3. After the mouse button is released:
+   - Free mode: the pet stays at the release position.
+   - Platform mode: the pet enters `falling` and lands on the nearest valid platform below it.
 
-### 3.3 平台
+### 3.3 Platforms
 
-`v1.0` 必须支持：
+`v1.0` must support:
 
-- 屏幕底部作为默认地面。
-- 至少两个用户可配置的虚拟平台。
-- 宠物能判断自己是否站在平台上。
-- 平台模式与自由模式可以切换。
+- The bottom of the screen as the default ground.
+- At least two user-configurable virtual platforms.
+- Detection of whether the pet is standing on a platform.
+- Switching between platform mode and free mode.
 
-识别其他应用窗口的顶部边框属于增强功能。它受操作系统权限和窗口信息获取方式影响，不作为月底通过验收的硬性条件。
+Detecting the top edges of other application windows is an enhancement. Because it depends on operating-system permissions and access to window information, it is not required for the end-of-month acceptance test.
 
-### 3.4 路径指引
+### 3.4 Guided Movement
 
-- 第一版：指定一个同平台目标，宠物水平走过去。
-- 第二版：目标位于其他平台时，按平台连接关系选择路线。
-- 增强版：加入跳跃或更完整的路径搜索。
+- First version: select a destination on the same platform and let the pet walk toward it.
+- Second version: if the target is on another platform, choose a route through connected platforms.
+- Enhancement: add jumping or a more complete pathfinding system.
 
-## 4. 专注与养成
+## 4. Focus and Progression
 
-### 4.1 番茄钟
+### 4.1 Pomodoro Timer
 
-- 默认专注时间可配置，开发测试时允许使用短时长。
-- 支持开始、暂停、继续和放弃。
-- 只有正常完成才发放奖励。
-- 计时状态必须与宠物表现同步。
+- The default focus duration is configurable, with short durations allowed during development.
+- The timer supports starting, pausing, resuming, and abandoning a session.
+- Rewards are granted only when a session is completed normally.
+- The timer state and pet behavior must remain synchronized.
 
-### 4.2 奖励系统
+### 4.2 Rewards
 
-- 完成一次专注获得金币和经验。
-- 经验达到阈值后升级。
-- 奖励计算集中在一个位置，便于之后调整数值。
+- Completing a focus session grants coins and experience points.
+- The pet levels up after reaching an experience threshold.
+- Reward calculations are kept in one place so that balancing can be adjusted later.
 
-### 4.3 商店与装扮
+### 4.3 Shop and Outfits
 
-- 至少三件物品。
-- 未购买、已拥有和已装备三种状态清楚可辨。
-- 余额不足时不能购买。
-- 装备变化能够在宠物外观或信息面板中体现。
+- The shop contains at least three items.
+- Not purchased, owned, and equipped states are clearly distinguishable.
+- An item cannot be purchased when the balance is too low.
+- Equipment changes are visible on the pet or in its information panel.
 
-### 4.4 存档
+### 4.4 Save Data
 
-存档至少包含：金币、经验、等级、已购买物品、当前装备、番茄钟设置和宠物位置。存档损坏时程序应给出可理解的提示，并能安全创建新存档。
+The save file contains at least the coin balance, experience, level, purchased items, current equipment, Pomodoro settings, and pet position. If the save file is damaged, the application should display an understandable message and safely create a new save.
 
-## 5. 优先级
+## 5. Priorities
 
-### 必须完成（P0）
+### Required (P0)
 
-透明桌宠、拖动与摆动、下落与平台、基础路径指引、番茄钟、奖励、商店、装备、存档。
+Transparent desktop pet, dragging and swinging, falling and platforms, basic guided movement, Pomodoro timer, rewards, shop, equipment, and save data.
 
-### 尽量完成（P1）
+### Targeted (P1)
 
-更多待机动作、随机对话、睡觉、连续专注奖励、可视化专注统计。
+Additional idle actions, random dialogue, sleeping, focus streak rewards, and focus-statistic visualizations.
 
-### 月底之后（P2）
+### After the Monthly Milestone (P2)
 
-识别其他应用窗口顶部、多屏适配、复杂跳跃路线、声音、插件系统、打包安装程序。
+Detecting other application windows, multi-display support, complex jumping routes, sound, a plugin system, and a packaged installer.
 
-## 6. 最终验收
+## 6. Final Acceptance
 
-### 作品验收
+### Product Acceptance
 
-- 从全新环境按照 README 能启动程序。
-- 演示一轮“专注 → 奖励 → 购买 → 装备”。
-- 演示拖动、摆动、下落、落脚和自动前往目标。
-- 关闭再打开后，关键数据仍存在。
-- 核心逻辑有自动测试。
+- Follow the README from a clean environment and start the application.
+- Demonstrate one complete focus, reward, purchase, and equip cycle.
+- Demonstrate dragging, swinging, falling, landing, and guided movement.
+- Close and reopen the application without losing key data.
+- Cover core logic with automated tests.
 
-### 学习验收
+### Learning Acceptance
 
-- 不看答案，从空文件完成一个小型 Python 功能。
-- 用自己的话说明事件、函数、对象和状态是怎样协作的。
-- 独立增加一个小功能。
-- 定位并修复两个预先放入的常见错误。
-- 能用 Git 提交修改，并解释本次提交解决了什么问题。
+- Build a small Python feature from an empty file without copying an answer.
+- Explain in personal words how events, functions, objects, and state work together.
+- Add one small feature independently.
+- Locate and repair two intentionally introduced common errors.
+- Create a Git commit and explain what problem the commit solves.

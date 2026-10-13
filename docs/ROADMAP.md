@@ -1,76 +1,76 @@
-# 2026 年 10 月开发路线图
+# October 2026 Development Roadmap
 
-> 默认节奏：每天约 60–90 分钟。时间不足时先保证 P0 的完整体验，素材数量和视觉精细度让位于可运行、可解释的代码。
+> Default pace: approximately 60–90 minutes per day. If time becomes limited, preserve a complete P0 experience and reduce the amount of artwork or visual polish first.
 
-## 阶段 0：把项目跑起来（10 月 12–13 日）
+## Stage 0: Make the Project Run (October 12–13)
 
-- [x] 明确产品范围和月底验收标准
-- [x] 建立本地 Git 仓库骨架
-- [x] 连接并创建公开的 GitHub 仓库
-- [ ] 准备 Python 3.14 虚拟环境
-- [ ] 安装 PySide6 和 pytest
-- [ ] 亲手创建第一个桌宠窗口
+- [x] Define the product scope and end-of-month acceptance criteria
+- [x] Create the local Git repository structure
+- [x] Create and connect the public GitHub repository
+- [x] Prepare a Python 3.14 virtual environment
+- [x] Install PySide6 and pytest
+- [x] Build and run the first desktop window
 
-学习重点：终端、Python 解释器、虚拟环境、包、程序入口和第一次 Git 提交。
+Learning focus: the terminal, Python interpreters, virtual environments, packages, application entry points, and the first independent Git workflow.
 
-## 阶段 1：让宠物活起来（10 月 14–17 日）
+## Stage 1: Bring the Pet to Life (October 14–17)
 
-- [ ] 透明、无边框和置顶窗口
-- [ ] 显示第一张宠物占位图
-- [ ] 鼠标按下、移动、松开事件
-- [ ] 被拎起状态
-- [ ] 根据拖动方向左右摆动
-- [ ] 基础待机动画
+- [ ] Create a transparent, frameless, always-on-top window
+- [ ] Display the first placeholder pet image
+- [ ] Handle mouse press, move, and release events
+- [ ] Add the picked-up state
+- [ ] Swing according to dragging direction
+- [ ] Add a basic idle animation
 
-学习重点：变量、坐标、条件、函数、事件、计时器和调试输出。
+Learning focus: variables, coordinates, conditions, functions, events, timers, and debug output.
 
-## 阶段 2：桌面空间与平台（10 月 18–21 日）
+## Stage 2: Desktop Space and Platforms (October 18–21)
 
-- [ ] 松手后的下落效果
-- [ ] 屏幕底部地面
-- [ ] 两个自定义平台
-- [ ] 落脚判断
-- [ ] 自由模式与平台模式
-- [ ] 同平台目标移动
+- [ ] Add falling after release
+- [ ] Treat the bottom of the screen as the ground
+- [ ] Add two custom platforms
+- [ ] Detect landing
+- [ ] Add free mode and platform mode
+- [ ] Move toward a destination on the same platform
 
-学习重点：列表、字典、循环、状态机、速度与位置更新、碰撞判断。
+Learning focus: lists, dictionaries, loops, state machines, position and velocity updates, and collision detection.
 
-## 阶段 3：专注与成长（10 月 22–25 日）
+## Stage 3: Focus and Progression (October 22–25)
 
-- [ ] 番茄钟开始、暂停、继续和完成
-- [ ] 专注状态与宠物动作联动
-- [ ] 金币、经验和升级
-- [ ] JSON 存档与恢复
-- [ ] 错误存档的安全处理
+- [ ] Start, pause, resume, and complete a Pomodoro session
+- [ ] Connect focus state to pet behavior
+- [ ] Add coins, experience, and levels
+- [ ] Save and restore data with JSON
+- [ ] Recover safely from damaged save data
 
-学习重点：时间、数据建模、文件读写、异常处理、模块拆分。
+Learning focus: time, data modeling, file input and output, exception handling, and module organization.
 
-## 阶段 4：商店与换装（10 月 26–28 日）
+## Stage 4: Shop and Outfits (October 26–28)
 
-- [ ] 三件可购买物品
-- [ ] 购买条件与扣款
-- [ ] 背包与装备
-- [ ] 外观叠加或装备状态展示
-- [ ] 奖励与商店逻辑测试
+- [ ] Add three purchasable items
+- [ ] Validate purchases and deduct coins
+- [ ] Add inventory and equipment
+- [ ] Display equipped items or equipment state
+- [ ] Test reward and shop logic
 
-学习重点：类、职责划分、数据验证、自动测试和重构。
+Learning focus: classes, separation of responsibilities, data validation, automated testing, and refactoring.
 
-## 阶段 5：路线、打磨与验收（10 月 29–31 日）
+## Stage 5: Routes, Polish, and Acceptance (October 29–31)
 
-- [ ] 多平台基础路径指引
-- [ ] 随机待机互动
-- [ ] 完善 README 与运行说明
-- [ ] 录制 GIF 或短视频
-- [ ] 发布 `v1.0`
-- [ ] 完成独立功能、讲解、调试和 Git 验收
+- [ ] Add basic guided movement across platforms
+- [ ] Add random idle interactions
+- [ ] Complete the README and setup instructions
+- [ ] Record a GIF or short video
+- [ ] Release `v1.0`
+- [ ] Complete the independent feature, explanation, debugging, and Git assessments
 
-学习重点：简单路径搜索、集成调试、发布意识和项目复盘。
+Learning focus: simple pathfinding, integration debugging, release practices, and project reflection.
 
-## 范围保护规则
+## Scope Protection Rules
 
-出现进度压力时，按以下顺序缩减，而不是牺牲完整性：
+If progress falls behind, reduce scope in this order rather than sacrificing a complete experience:
 
-1. 减少衣服和动作素材数量。
-2. 简化动画帧数和商店界面。
-3. 将真实窗口顶部识别延后。
-4. 将复杂跨平台跳跃改为预定义平台路线。
+1. Reduce the number of outfits and animation assets.
+2. Simplify animation frames and the shop interface.
+3. Postpone detection of other application windows.
+4. Replace complex cross-platform jumping with predefined platform routes.

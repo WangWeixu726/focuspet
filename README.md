@@ -1,49 +1,60 @@
 # FocusPet
 
-一只住在桌面上、陪伴专注学习的养成宠物。
+A playful desktop companion that turns focused study sessions into rewards, growth, and interaction.
 
-> 当前阶段：方案已经确定，功能代码尚未开始。目标是在 2026 年 10 月 31 日完成 `v1.0`，并通过独立实现与讲解验收。
+> Current status: the first PySide6 window is working. The goal is to release `v1.0` by October 31, 2026, and demonstrate the ability to build, explain, debug, and extend the project independently.
 
-## 核心体验
+## Core Experience
 
-1. 开启番茄钟，宠物进入陪伴状态。
-2. 完成专注后获得金币和经验。
-3. 使用奖励购买衣服、食物或小道具。
-4. 拖动宠物时它会被拎起并左右摆动；松手后会落到地面或平台。
-5. 可以指定目的地让宠物自己前往，也可以切换为允许停在任意位置的自由模式。
+1. Start a Pomodoro session and let the pet keep you company.
+2. Earn coins and experience points after completing a focus session.
+3. Spend rewards on clothes, food, and small items.
+4. Pick the pet up with the mouse and watch it swing from side to side; release it to land on the ground or a platform.
+5. Guide the pet to a destination, or switch to free mode and place it anywhere on the desktop.
 
-## `v1.0` 验收范围
+## `v1.0` Acceptance Checklist
 
-- [ ] 透明、无边框、置顶的桌宠窗口
-- [ ] 待机动画与点击互动
-- [ ] 拖动、拎起、左右摆动和松手下落
-- [ ] 地面与至少两个自定义落脚平台
-- [ ] 自由模式与平台模式
-- [ ] 指定目的地后自动移动
-- [ ] 番茄钟的开始、暂停、继续和完成
-- [ ] 完成专注后获得金币与经验
-- [ ] 商店、背包和至少三件可装备物品
-- [ ] 本地存档，重启后保留状态
-- [ ] 基础自动测试、运行说明和演示素材
+- [ ] Transparent, frameless, always-on-top pet window
+- [ ] Idle animations and click interactions
+- [ ] Pick-up, dragging, swinging, falling, and landing
+- [ ] A ground surface and at least two custom platforms
+- [ ] Free mode and platform mode
+- [ ] Guided movement to a selected destination
+- [ ] Start, pause, resume, and complete a Pomodoro session
+- [ ] Coin and experience rewards for completed sessions
+- [ ] A shop, inventory, and at least three equippable items
+- [ ] Local save data that survives an application restart
+- [ ] Basic automated tests, setup instructions, and a demo
 
-## 暂定技术路线
+## Technology
 
 - Python 3.14
-- PySide6：桌面窗口、鼠标事件、计时器和动画
-- JSON：第一版存档
-- pytest：自动测试
+- PySide6 for the desktop window, mouse events, timers, and animations
+- JSON for the first save-data format
+- pytest for automated tests
 
-选择 PySide6 是因为这个项目需要透明无边框窗口、置顶显示、鼠标拖动和计时事件。第一阶段先使用简单占位图，避免素材制作盖过 Python 学习本身。
+PySide6 was selected because FocusPet needs a transparent frameless window, always-on-top behavior, mouse interaction, and timers. The first stages use simple placeholder visuals so that artwork does not overshadow learning Python.
 
-## 学习方式
+## Getting Started
 
-这个仓库同时记录项目和学习过程。每项功能都遵循：提出需求 → 拆解问题 → 亲手实现 → 调试 → 小步提交 → 写简短复盘。
+```bash
+python3.14 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python main.py
+```
 
-- [产品与验收说明](docs/PRODUCT_SPEC.md)
-- [开发路线图](docs/ROADMAP.md)
-- [结对学习规则](docs/LEARNING_WORKFLOW.md)
-- [开发日志](devlog/)
+The virtual environment keeps this project's packages separate from the system Python installation and other projects.
 
-## 当前下一步
+## Learning Approach
 
-完成 Python 开发环境设置，然后亲手创建第一个透明桌宠窗口。
+This repository records both the product and the learning process. Each feature follows the same cycle: define the need, break down the problem, implement it, debug it, create a small commit, and write a short reflection.
+
+- [Product specification and acceptance criteria](docs/PRODUCT_SPEC.md)
+- [Development roadmap](docs/ROADMAP.md)
+- [Pair-learning workflow](docs/LEARNING_WORKFLOW.md)
+- [Development log](devlog/)
+
+## Current Next Step
+
+Turn the standard window into a transparent, frameless, always-on-top desktop pet window.
