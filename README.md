@@ -2,7 +2,7 @@
 
 A playful desktop companion that turns focused study sessions into rewards, growth, and interaction.
 
-> Current status: the first PySide6 window is working. The goal is to release `v1.0` by October 31, 2026, and demonstrate the ability to build, explain, debug, and extend the project independently.
+> Current status: a placeholder pet is running in a transparent, frameless, always-on-top window. The goal is to release `v1.0` by October 31, 2026, and demonstrate the ability to build, explain, debug, and extend the project independently.
 
 ## Core Experience
 
@@ -14,7 +14,7 @@ A playful desktop companion that turns focused study sessions into rewards, grow
 
 ## `v1.0` Acceptance Checklist
 
-- [ ] Transparent, frameless, always-on-top pet window
+- [x] Transparent, frameless, always-on-top pet window
 - [ ] Idle animations and click interactions
 - [ ] Pick-up, dragging, swinging, falling, and landing
 - [ ] A ground surface and at least two custom platforms
@@ -57,4 +57,4 @@ This repository records both the product and the learning process. Each feature 
 
 ## Current Next Step
 
-Turn the standard window into a transparent, frameless, always-on-top desktop pet window.
+Handle mouse press, move, and release events so the pet can be dragged around the desktop.

@@ -15,8 +15,8 @@ Learning focus: the terminal, Python interpreters, virtual environments, package
 
 ## Stage 1: Bring the Pet to Life (October 14–17)
 
-- [ ] Create a transparent, frameless, always-on-top window
-- [ ] Display the first placeholder pet image
+- [x] Create a transparent, frameless, always-on-top window
+- [x] Display the first placeholder pet image
 - [ ] Handle mouse press, move, and release events
 - [ ] Add the picked-up state
 - [ ] Swing according to dragging direction
